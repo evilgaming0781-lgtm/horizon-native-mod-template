@@ -1,15 +1,18 @@
 [package]
-name = "horizon-example-mod"
+name = "horizon-mechanical-works"
 version = "0.1.0"
 edition = "2024"
 rust-version = "1.95"
 license = "MIT"
-description = "A minimal native Horizon Mixins mod"
+description = "A production-grade mechanical automation mod for Horizon Minecraft"
 
 [lib]
 # This exact source is also injected as a same-crate module by horizon-mixins.
-path = "mixins/example_mod/runtime.rs"
+path = "mixins/mechanical_works/runtime.rs"
 
 [workspace]
 members = ["tools/audit"]
 resolver = "2"
+
+[dependencies]
+# Add any dependencies needed for the HMW mod here

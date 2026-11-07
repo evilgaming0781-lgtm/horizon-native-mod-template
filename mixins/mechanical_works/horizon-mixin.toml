@@ -1,5 +1,5 @@
 [mod]
-id = "example_mod"
+id = "mechanical_works"
 version = "0.1.0"
 priority = 100
 
@@ -9,7 +9,7 @@ horizon_revision = "ba6344a59cb9e755b730dcf02285fc0d33b97d3c"
 [[module]]
 id = "runtime"
 file = "crates/horizon-client/src/game.rs"
-name = "example_mod"
+name = "mechanical_works"
 source = "runtime.rs"
 
 [[injection]]
@@ -18,3 +18,11 @@ kind = "HEAD"
 target = "horizon_client::game::Game<'_>::break_block"
 helper = "break.rs"
 bindings = [{ name = "pos", ty = "[i32;3]", value = "pos" }]
+
+# Additional injections for mechanical automation features
+[[injection]]
+id = "before-place"
+kind = "HEAD"
+target = "horizon_client::game::Game<'_>::place_block"
+helper = "place.rs"
+bindings = [{ name = "pos", ty = "[i32;3]", value = "pos" }, { name = "block_type", ty = "u32", value = "block_type" }]

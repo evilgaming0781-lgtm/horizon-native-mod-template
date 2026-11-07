@@ -1,0 +1,63 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "hmw/qwen3-coder-30b",
+  "small_model": "hmw/qwen3-coder-30b",
+  "enabled_providers": [
+    "hmw"
+  ],
+  "provider": {
+    "hmw": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "HMW Kaggle (Qwen3-Coder 30B)",
+      "options": {
+        "baseURL": "https://undergraduate-columbus-apache-terrain.trycloudflare.com/v1",
+        "apiKey": "xPHxpmhegSoKjCiPkIvlQergIwURE8Iq"
+      },
+      "models": {
+        "qwen3-coder-30b": {
+          "name": "Qwen3-Coder-30B-A3B Q4_K_M",
+          "tool_call": true,
+          "reasoning": false,
+          "limit": {
+            "context": 167936,
+            "output": 32768
+          }
+        }
+      }
+    }
+  },
+  "permission": {
+    "edit": "allow",
+    "read": "allow",
+    "bash": {
+      "*": "ask",
+      "cargo *": "allow",
+      "rustc *": "allow",
+      "rustfmt *": "allow",
+      "rustup show*": "allow",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "git add *": "allow",
+      "ls*": "allow",
+      "dir*": "allow",
+      "cat *": "allow",
+      "type *": "allow",
+      "grep *": "allow",
+      "rg *": "allow",
+      "find *": "allow",
+      "mkdir *": "allow",
+      "Get-ChildItem*": "allow",
+      "Get-Content*": "allow",
+      "rm *": "deny",
+      "rmdir *": "deny",
+      "del *": "deny",
+      "Remove-Item*": "deny",
+      "sudo *": "deny",
+      "git push*": "deny",
+      "git reset --hard*": "deny",
+      "git clean*": "deny",
+      "format *": "deny"
+    }
+  }
+}
