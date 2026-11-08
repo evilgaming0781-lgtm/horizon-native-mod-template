@@ -10,8 +10,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "HMW Kaggle (Qwen3-Coder 30B)",
       "options": {
-        "baseURL": "https://undergraduate-columbus-apache-terrain.trycloudflare.com/v1",
-        "apiKey": "xPHxpmhegSoKjCiPkIvlQergIwURE8Iq"
+        "baseURL": "https://0b2e-34-11-88-169.ngrok-free.app/v1",
+        "apiKey": "id_sWot-g8THBdaGEMbP8QhhUNAlNHCe"
       },
       "models": {
         "qwen3-coder-30b": {

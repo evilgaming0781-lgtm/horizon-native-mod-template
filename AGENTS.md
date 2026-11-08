@@ -2,6 +2,49 @@
 
 Always reply in English only.
 
+## Project memory (saved automatically from earlier sessions)
+Background only: if it conflicts with the code you actually see, trust the code and say so.
+
+### Project
+Horizon Mechanical Works (HMW) is a Rust-based mixin for the Horizon framework that implements mechanical automation systems including power generation, consumption, and machine management.
+
+### Architecture and key files
+- `mixins/mechanical_works/runtime.rs` - Main runtime entry point for HMW mixin
+- `mixins/mechanical_works/mechanical/power/types.rs` - Foundation power system types (Watts, PowerSupply, PowerDemand, etc.)
+- `mixins/mechanical_works/mechanical/power/generator.rs` - Generator subsystem with state management
+- `mixins/mechanical_works/mechanical/power/consumer.rs` - Consumer subsystem with allocation tracking
+- `mixins/mechanical_works/mechanical/power/grid.rs` - Power grid for managing generators and consumers
+- `mixins/mechanical_works/mechanical/machine/types.rs` - Machine system foundational types (MachineId, MachineTypeId, etc.)
+- `mixins/mechanical_works/mechanical/machine/state.rs` - Machine state management system
+- `Cargo.toml` - Project manifest with proper runtime path references
+- `horizon-mixin.toml` - Mixin configuration file
+
+### Conventions and decisions
+- All power values represented in consistent watts (W) units
+- Modular architecture with separate physical files for each responsibility
+- Lightweight module entry points that delegate implementation to submodules
+- Strong typing with proper error handling for invalid states/values
+- Deterministic power allocation algorithms that respect consumer requirements
+- State transitions validated through explicit rules with structured errors
+- Unit tests included in each module file for comprehensive coverage
+
+### Commands
+- `cargo check --all-targets --manifest-path Cargo.toml` - Verify compilation
+- `cargo fmt --all --check --manifest-path Cargo.toml` - Check code formatting
+- `cargo build --manifest-path Cargo.toml` - Build project
+- `cargo test --manifest-path Cargo.toml` - Run tests
+- `cargo test --manifest-path Cargo.toml --lib mechanical::power::types` - Test specific module
+
+### Pitfalls to avoid
+- Don't duplicate power type definitions; reuse existing types from power/types.rs
+- Ensure all modules are properly exported through parent mod.rs files
+- Validate state transitions explicitly to prevent invalid machine states
+- Handle overflow conditions safely using saturating arithmetic
+- Maintain strict separation between power system logic and Horizon framework integration
+
+### Status and next steps
+Project structure successfully established with complete runtime integration. Core power system types, generators, consumers, and grid implemented with comprehensive unit tests. Machine system foundational types and state management completed. Next steps involve implementing Horizon hooks for integration and connecting the mechanical systems to actual game mechanics.
+
 ## Workflow for every coding task (Rust / Cargo project)
 1. **Explore first.** Use glob and grep to find every file and line range the change touches. Read only what you need.
 2. **Plan.** Write a short list of the files you will change and why.
