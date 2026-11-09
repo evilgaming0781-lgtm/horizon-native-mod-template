@@ -10,8 +10,8 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "HMW Kaggle (Qwen3-Coder 30B)",
       "options": {
-        "baseURL": "https://0b2e-34-11-88-169.ngrok-free.app/v1",
-        "apiKey": "id_sWot-g8THBdaGEMbP8QhhUNAlNHCe"
+        "baseURL": "https://77cb-35-226-65-123.ngrok-free.app/v1",
+        "apiKey": "BWOf6ZZFqX4w7f_bSOTNk4ySfkRVijos"
       },
       "models": {
         "qwen3-coder-30b": {
@@ -19,8 +19,8 @@
           "tool_call": true,
           "reasoning": false,
           "limit": {
-            "context": 167936,
-            "output": 32768
+            "context": 80654,
+            "output": 45000
           }
         }
       }
@@ -51,7 +51,7 @@
       "Get-Content*": "allow",
       "rm *": "deny",
       "rmdir *": "deny",
-      "del *": "deny",
+      "del *": "allow",
       "Remove-Item*": "deny",
       "sudo *": "deny",
       "git push*": "deny",

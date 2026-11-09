@@ -5,6 +5,8 @@
 //! - Machine operations
 //! - Component interactions
 //! - Rotational physics foundation
+//! - Network topology management
+//! - Transmission systems
 
 pub mod power;
 pub mod machine;
@@ -13,6 +15,8 @@ pub mod interaction;
 pub mod block;
 pub mod core;
 pub mod physics;
+pub mod network;
+pub mod transmission;
 
 /// Initializes the mechanical system components.
 ///
